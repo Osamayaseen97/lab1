@@ -1,8 +1,7 @@
-/// <reference types= "cypress" />
+<reference types= "cypress" />
 
 Cypress.on("uncaught:exception", (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
+ 
   return false;
 });
 
@@ -43,9 +42,7 @@ describe("almosafer website", () => {
   it.skip("check that the flight tab is clicked by default", () => {
     cy.URLHandle();
 
-    // cy.get('#uncontrolled-tab-example-tab-flights').should('have.attr',"aria-selected","true")
 
-    // cy.get('#uncontrolled-tab-example-tab-flights').should("have.class","active")
     cy.get("#uncontrolled-tab-example-tab-hotels")
       .invoke("attr", "aria-selected")
       .should("be.oneOf", ["true", "false"]);
